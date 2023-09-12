@@ -1,0 +1,51 @@
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 2px 0;
+    display: inline-block;
+    border: 1px solid var(--main);
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 1.5vh;
+    font-size: 1em;
+}
+
+input[type=text]:disabled {
+    border: 1px solid #ccc;
+}
+
+input[type=submit], button{
+    width: 100%;
+    background-color: var(--main); 
+    color: white;
+    padding: 12px 20px;
+    margin: 2px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+input[type=submit]:hover, button:hover {
+    background-color: var(--seccond);  
+}
+
+#smallInputBtn{
+    width: 30%;
+}
+
+#inputNoMargin{
+    margin: 0;
+}
+
+.input50Div{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.input50Div div{
+    width: 48%;
+}

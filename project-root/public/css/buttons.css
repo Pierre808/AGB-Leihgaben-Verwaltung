@@ -1,0 +1,86 @@
+.buttonlist{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4vw;
+}
+
+.buttonlist-vertical{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4vh;
+}
+
+.buttonlist button{
+    height: 7vh;
+    width: auto;
+    background-color: var(--main); 
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonlist-vertical button{
+    height: 7vh;
+    border-radius: 12px;
+}
+
+.buttonlist-vertical h3{
+    text-align: center;
+}
+
+.button100{
+    height: auto;
+    width: 90%;
+    margin-left: 5%;
+    background-color: var(--main); 
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.buttonhundred{
+    width: 100%;
+    margin-left: 0%;
+}
+
+@media screen and (max-width: 900px) {
+    .buttonlist button{
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .buttonlist{
+        gap: 2vw;
+    }
+    .buttonlist button{
+        height: 8vh;
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .buttonlist{
+        gap: 1.5vw;
+    }
+    .buttonlist button{
+        height: 10vh;
+        font-size: 0.75em;
+    }
+}

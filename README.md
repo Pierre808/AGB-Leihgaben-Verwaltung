@@ -23,17 +23,20 @@ To facilitate this, a barcode is attached to every item loaned to students. Idea
     - [intl](http://php.net/manual/en/intl.requirements.php)
     - [mbstring](http://php.net/manual/en/mbstring.installation.php)
 
-- Additionally, make sure that the following extensions are enabled in your PHP:
+- Additionally, make sure that the following extensions are enabled:
     - json (enabled by default - don't turn it off)
     - [mysqlnd](http://php.net/manual/en/mysqlnd.install.php)
+    - [libcurl](http://php.net/manual/en/curl.requirements.php)
 
 - MariaDB database
 - Web server (e.g. Apache)
 
 ## Installation
 
-After installing the web server, PHP8.1 with the required extensions, and MariaDB, you will need to import the database structure from the provided SQL file ('AGB.sql') into your MariaDB database.
-Next Copy `env` to `.env` (project-root), specifically the baseURL and any database settings.
+After installing the web server, PHP8.1 with the required extensions, and MariaDB, you will need to import the database structure from the provided SQL file ('AGB.sql') into your MariaDB database. This will create a database with all the required tables.
+
+Next Copy `env` to `.env` (project-root), specify the baseURL and any database settings. The created database is called 'agb_ausleihen_db' and should be declared in the `.env`.
+
 The index.php is inside the project-root/public folder. This means you should configure your web server to "point" to the *public* folder, and not to the project root.
 
 ## Usage and Examples
@@ -100,6 +103,10 @@ If you have any questions or issues, feel free to reach out to me at pierre.equi
 
 ## Versions
 
+* 0.2.1
+    * cleaned and commented Helpers
+    * Commented functions in ProcessAjax
+    * Splited ProcessAjax and ProcessBarcode
 * 0.2
     * Added readme file
 * 0.1

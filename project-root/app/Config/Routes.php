@@ -8,7 +8,8 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Home::index');
 $routes->get('index-check/(:segment)', 'Home::index/$1');
 
-$routes->match(['get', 'post'], 'process-barcode', 'ProcessAjax::ProcessBarcode');
+$routes->match(['get', 'post'], 'process-barcode', 'ProcessBarcode::ProcessBarcode');
+
 $routes->match(['get', 'post'], 'gegenstandZuLeihgabeHinzufuegen', 'ProcessAjax::gegenstandZuLeihgabeHinzufuegen');
 $routes->match(['get', 'post'], 'gegenstandRegistrieren', 'ProcessAjax::gegenstandRegistrieren');
 $routes->match(['get', 'post'], 'gegenstandBarcodeBearbeiten', 'ProcessAjax::gegenstandBarcodeBearbeiten');

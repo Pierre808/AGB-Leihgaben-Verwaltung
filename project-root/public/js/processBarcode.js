@@ -32,7 +32,7 @@ function sendBarcode(barcode, barcodeType, animation, scanType, func, funcParams
                     }
                 }
 
-
+                
                 //functions
                 if(func != undefined)
                 {

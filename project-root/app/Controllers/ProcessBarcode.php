@@ -154,7 +154,8 @@ class ProcessBarcode extends BaseController
             if($leihgabe != null)
             {
                 $response['status'] = "ok";
-                $response['redirect'] = "gegenstand-zurueckgeben/" . $barcode;
+                $response['redirect'] = "gegenstand-zurueckgeben";
+                session()->setFlashdata('gegenstandId', $barcode);
             }
             else
             {

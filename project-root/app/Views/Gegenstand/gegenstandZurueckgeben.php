@@ -91,5 +91,15 @@
                 sendBarcode(code, 'gegenstand', 'true', 'return', 'gegenstandZurueckgeben', [code]);
             }
         }
+
+        <?php 
+        
+        if(esc($gegenstandId) != false)
+        { ?>
+            code = '<?= $gegenstandId ?>';
+            codeScanned();
+        <?php }
+
+        ?>
     </script>
 <?= $this->endSection() ?>

@@ -2,7 +2,7 @@
 
 ## Description
 
-This project serves as a management program for Abtei Gymnasium. It is intended to manage loaned items that are borrowed by students, for example, within the context of a project course. This system ensures that teachers have continuous access to all data (such as the student's name, borrowed item, loan period, etc.).
+This project serves as a management program for the Abtei Gymnasium Brauweiler. It is intended to manage loaned items that are borrowed by students, for example, within the context of a project course. This system ensures that teachers have continuous access to all data (such as the student's name, borrowed item, loan period, etc.).
 
 To facilitate this, a barcode is attached to every item loaned to students. Ideally, students are identified or registered using their student ID cards. If these are not available, there is an option to temporarily record the data manually. However, at the earliest convenience, these records should be updated using the student ID cards.
 
@@ -103,6 +103,9 @@ If you have any questions or issues, feel free to reach out to me at pierre.equi
 
 ## Versions
 
+* 0.2.2
+    * updated ci framework
+    * fixed barcode-scan bug on homepage
 * 0.2.1
     * cleaned and commented Helpers
     * Commented functions in ProcessAjax

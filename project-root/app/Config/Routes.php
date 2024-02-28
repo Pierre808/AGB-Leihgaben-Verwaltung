@@ -41,3 +41,4 @@ $routes->match(['get', 'post'], 'show-schueler/(:segment)', 'Schueler::schuelerA
 $routes->get('edit-schueler/(:any)', 'Schueler::schuelerausweisBearbeiten/$1/$2');
 $routes->get('schuelerdaten-anzeigen', 'Schueler::schuelerScannen');
 $routes->get('schuelerdaten-anzeigen/(:any)', 'Schueler::schuelerScannen/$1');
+

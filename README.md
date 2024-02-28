@@ -30,6 +30,7 @@ To facilitate this, a barcode is attached to every item loaned to students. Idea
 
 - MariaDB database
 - Web server (e.g. Apache)
+- When using Apache webserver make sure to enable mod_rewrite (`sudo a2enmod rewrite`, `sudo systemctl restart apache2`) and to enable the AllowOverride Apache setting (To give full access for htaccess, use `AllowOverride All` in your _httpd.conf_ file (in the \<Directory> section). See: [AllowOverride](https://httpd.apache.org/docs/2.2/mod/core.html#allowoverride)) 
 
 ## Installation
 

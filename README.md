@@ -22,6 +22,7 @@ To facilitate this, a barcode is attached to every item loaned to students. Idea
 - PHP version 8.1 is required, with the following extensions installed:
     - [intl](http://php.net/manual/en/intl.requirements.php)
     - [mbstring](http://php.net/manual/en/mbstring.installation.php)
+    - [mysqli](https://www.php.net/manual/de/book.mysqli.php)
 
 - Additionally, make sure that the following extensions are enabled:
     - json (enabled by default - don't turn it off)
@@ -30,7 +31,7 @@ To facilitate this, a barcode is attached to every item loaned to students. Idea
 
 - MariaDB database
 - Web server (e.g. Apache)
-- When using Apache webserver make sure to enable mod_rewrite (`sudo a2enmod rewrite`, `sudo systemctl restart apache2`) and to enable the AllowOverride Apache setting (To give full access for htaccess, use `AllowOverride All` in your _httpd.conf_ file (in the \<Directory> section). See: [AllowOverride](https://httpd.apache.org/docs/2.2/mod/core.html#allowoverride)) 
+- When using Apache webserver make sure to enable mod_rewrite (`sudo a2enmod rewrite`, `sudo systemctl restart apache2`) and to enable the AllowOverride Apache setting (To give full access for htaccess, use `AllowOverride All` in your _apache2.conf_ / _httpd.conf_ file (in the \<Directory> section). See: [AllowOverride](https://httpd.apache.org/docs/2.2/mod/core.html#allowoverride)) 
 
 ## Installation
 

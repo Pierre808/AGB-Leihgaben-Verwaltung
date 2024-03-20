@@ -69,7 +69,7 @@
                 console.log("finished code: " + code);
                 reading = false;
                 
-                sendBarcode(code, 'schueler', 'true', 'show');
+                window.location.href = "<?= base_url('show-schueler') ?>" + "/" + code; //TODO: test
             }
         }
     </script>

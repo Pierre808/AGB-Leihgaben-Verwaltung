@@ -69,7 +69,7 @@
                 console.log("finished code: " + code);
                 reading = false;
                 
-                sendBarcode(code, 'schueler');
+                window.location.href = "<?= base_url('add-gegenstand-to-leihgabe') ?>" + "/" + code; //TODO: test
 
             }
         }

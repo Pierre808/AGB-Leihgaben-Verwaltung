@@ -15,6 +15,7 @@ $routes->match(['get', 'post'], 'gegenstandRegistrieren', 'ProcessAjax::gegensta
 $routes->match(['get', 'post'], 'gegenstandBarcodeBearbeiten', 'ProcessAjax::gegenstandBarcodeBearbeiten');
 $routes->match(['get', 'post'], 'gegenstandZurueckgeben', 'ProcessAjax::gegenstandZurueckgeben');
 $routes->match(['get', 'post'], 'schuelerausweisBearbeiten', 'ProcessAjax::schuelerausweisBearbeiten');
+$routes->match(['get', 'post'], 'process-code', 'ProcessAjax::processCode');
 
 $routes->get('all-leihgabe', 'Leihgabe::alleLeihgaben');
 $routes->match(['get', 'post'], 'all-leihgabe/(:any)', 'Leihgabe::alleLeihgaben/$1');
@@ -41,4 +42,3 @@ $routes->match(['get', 'post'], 'show-schueler/(:segment)', 'Schueler::schuelerA
 $routes->get('edit-schueler/(:any)', 'Schueler::schuelerausweisBearbeiten/$1/$2');
 $routes->get('schuelerdaten-anzeigen', 'Schueler::schuelerScannen');
 $routes->get('schuelerdaten-anzeigen/(:any)', 'Schueler::schuelerScannen/$1');
-

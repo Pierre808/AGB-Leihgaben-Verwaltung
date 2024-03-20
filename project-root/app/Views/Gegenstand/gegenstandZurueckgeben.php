@@ -88,7 +88,35 @@
                 console.log("finished code: " + code);
                 reading = false;
                 
-                sendBarcode(code, 'gegenstand', 'true', 'return', 'gegenstandZurueckgeben', [code]);
+                $.ajax({
+                    url: 'gegenstandZurueckgeben',
+                    type: 'POST',
+                    dataType: "json",
+                    data: { 
+                        gegenstandId: code 
+                    },
+                    success: function(response) {
+                        console.log(response);
+                        if(response.status == "ok") {
+                            startSuccessAnim(response.redirect);
+                        }
+                        else {
+                            if(response.hasOwnProperty('links'))
+                            {
+                                //error animation with message and links
+                                startErrorAnim(response.error_message, response.links);
+                            }
+                            else
+                            {
+                                //error animation with message but no links
+                                startErrorAnim(response.error_message, []);
+                            }
+                        }
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+                });
             }
         }
 
@@ -96,7 +124,8 @@
         
         if(esc($gegenstandId) != false)
         { ?>
-            code = '<?= $gegenstandId ?>';
+            code = '<?= esc($gegenstandId) ?>';
+            console.log(code);
             codeScanned();
         <?php }
 

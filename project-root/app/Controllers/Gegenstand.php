@@ -108,18 +108,21 @@ class Gegenstand extends BaseController
         return view('Gegenstand/barcodeBearbeiten', $data);
     }
 
-    public function gegenstandZurueckgeben()
+    public function gegenstandZurueckgeben($gegenstandId = false)
     {
         $data['page_title'] = "Barcode neu zuweisen";
         $data['menuName'] = "gegenstand";
         
-        $gegenstandId = false;
+        $gegenstandIdn = false;
         if(!empty(session()->getFlashdata('gegenstandId')))
         {
-            $gegenstandId = session()->getFlashdata('gegenstandId');
+            $gegenstandIdn = session()->getFlashdata('gegenstandId');
         }
-        $data['gegenstandId'] = $gegenstandId;
+        $data['gegenstandId'] = $gegenstandIdn;
             
+        if($gegenstandId) {
+            $data['gegenstandId'] = $gegenstandId;
+        }
 
         $lastInfo = session()->getFlashdata('last-zurueckgegeben');
         $data['lastInfo'] = $lastInfo;

@@ -86,7 +86,26 @@
             if(currentCode == code) {
                 console.log("finished code: " + code);
                 
-                sendBarcode(code, '', false, "home");
+                $.ajax({
+                    url: 'process-code',
+                    type: 'POST',
+                    dataType: "json",
+                    data: { 
+                        code: code
+                    },
+                    success: function(response) {
+                        console.log(response);
+                        if(response.status == "ok") {
+                            startSuccessAnim(response.redirect);
+                        }
+                        else {
+                            console.log("code not ok");
+                        }
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+                });
 
                 code = "";
             }

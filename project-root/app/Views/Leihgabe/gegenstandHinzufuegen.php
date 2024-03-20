@@ -164,8 +164,40 @@
                 {
                     datumEnde = document.getElementById("datum-input").value;
                 }
-                let params = ["<?= esc($schuelerId) ?>", code, document.getElementById("weitere-input").value, document.getElementById("lehrer-input").value, datumEnde];
-                sendBarcode(code, 'gegenstand', 'true', 'lend', 'gegenstandZuLeihgabeHinzufuegen', params);
+                
+                $.ajax({
+                    url: 'gegenstandZuLeihgabeHinzufuegen',
+                    type: 'POST',
+                    dataType: "json",
+                    data: { 
+                        schuelerId: "<?= esc($schuelerId) ?>",
+                        gegenstandId: code,
+                        weitere: document.getElementById("weitere-input").value,
+                        lehrer: document.getElementById("lehrer-input").value,
+                        datumEnde: datumEnde
+                    },
+                    success: function(response) {
+                        console.log(response);
+                        if(response.status == "ok") {
+                            startSuccessAnim(response.redirect);
+                        }
+                        else {
+                            if(response.hasOwnProperty('links'))
+                            {
+                                //error animation with message and links
+                                startErrorAnim(response.error_message, response.links);
+                            }
+                            else
+                            {
+                                //error animation with message but no links
+                                startErrorAnim(response.error_message, []);
+                            }
+                        }
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+                });
             }
         }
 
